@@ -573,6 +573,48 @@ section {
   font-size: 14px;
 }
 
+.certifications .icon-box {
+  margin-bottom: 20px;
+}
+
+.certifications .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.certifications .icon i {
+  /* color: #fff; */
+  font-size: 24px;
+  line-height: 0;
+}
+
+.certifications .title {
+  margin-left: 80px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.certifications .title a {
+  color: #343a40;
+}
+
+.certifications .title a:hover {
+  color: #149ddd;
+}
+
+.certifications .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
 
 .contact {
   padding-bottom: 130px;
