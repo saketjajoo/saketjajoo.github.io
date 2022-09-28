@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script async="async" defer="defer" src="static/js/smooth-scroll.js"></script>
+
+    <script src="https://kit.fontawesome.com/90ba02e172.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="header container">
+        <div class="header__intro">
+          <h1 class="header__title">Saket Jajoo</h1>
+          <p class="header__affiliation">CS @ University of Illinois Urbana-Champaign</p>
+          <p class="header__contact">saketjajoo77@gmail.com   |   saketsj2@illinois.edu</p>
+          <ul class="header__links list-unstyled list-inline">
+            <li>
+              <a href="https://www.linkedin.com/in/saketjajoo" class="no-highlight"
+                ><i aria-hidden="true" title="LinkedIn" class="fa fa-linkedin fa-lg"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://github.com/saketjajoo" class="no-highlight"
+                ><i aria-hidden="true" title="GitHub" class="fa fa-github fa-lg"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/saket_jajoo" class="no-highlight"
+                ><i aria-hidden="true" title="Twitter" class="fa fa-twitter fa-lg"></i
+              ></a>
+            </li>
+          </ul>
+          <nav>
+            <ul class="header__nav list-unstyled list-inline">
+              <li><a data-scroll="data-scroll" href="#education">Education</a></li>
+              <li><a data-scroll="data-scroll" href="#experience">Experience</a></li>
+              <li><a data-scroll="data-scroll" href="#skills">Skills</a></li>
+              <li><a data-scroll="data-scroll" href="#certifications">Certifications</a></li>
+              <li><a data-scroll="data-scroll" href="#recommendations">Reading Recommendations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+
+        <section class="about">
+            <div class="container">
+              <h2 class="section-title">About</h2>
+              <p>
+                Hello there! Welcome to my website 👋
+              </p>
+              <p>
+                My name is Saket. I am a graduate student at the <a href="https://illinois.edu/">University of
+                Illinois Urbana-Champaign</a> pursuing a Masters degree in Computer Science. Previously I worked at <a href="https://cloudera.com/">Cloudera</a> in the Product Security team as a Software Engineer
+                for 2 years before returning back to academia.
+              </p>
+              <p>
+                I received my B.Tech in Computer Science and Engineering from
+                <a href="https://vit.ac.in/">Vellore Institute of Technology</a>, concentrating in 
+                Information Security.
+              </p>
+              <p>When I am not coding my next project, I enjoy spending my time:</p>
+              <ul>
+                <li>
+                  <p> Playing piano <i class="fa fa-music"></i> </p>
+                </li>
+                <li>
+                  <p> Watching football <i class="fa fa-futbol-o"></i> </p>
+                </li>
+                <li>
+                  <p> Reading about Astronomy <i class="fa fa-space-shuttle"></i> </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="education" class="education">
+            <div class="container">
+              <h2 class="section-title">Education</h2>
+              
+              <button class="collapsible" style="cursor: default !important;">
+                <div>
+                    <img src="static/imgs/uiuc.jpg" height="55" width="50" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized">Master of Computer Science</span>
+                    <span class="dates"> August 2022 - December 2023 </span>
+                    <br>
+                    <strong>University of Illinois Urbana-Champaign</strong>
+               </div>
+            </button>
+
+                <button class="collapsible" style="cursor: default !important;">
+                    <div>
+                        <img src="static/imgs/vit.png" height="55" width="50" align="left" style="margin-right: 15px;" />
+                        <span class="emphasized">Bachelor of Technology in Computer Science and Engineering (with specialization in Information Security)</span>
+                        <span class="dates"> July 2016 - June 2020 </span>
+                        <br>
+                        <strong>Vellore Institute of Technology</strong>
+                   </div>
+                </button>
+
+            </div>
+          </section>
+
+          <section id="experience" class="experience">
+            <div class="container">
+              <h2 class="section-title">Work Experience</h2>
+
+              <button class="collapsible">
+                <div>
+                    <img src="static/imgs/cloudera.png" height="50" width="50" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized">Software Development Engineer II</span>
+                    <span class="dates"> August 2021 - July 2022 </span>
+                    <br>
+                    <strong>Cloudera</strong>
+               </div>
+                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
+              </button>
+                <div class="content">
+                    <p>Developed and maintained a platform-security API that fetched the security scan results from various tools which simplified querying for the scan results for all the engineering teams for their relevant services resulting in faster resolution of security vulnerabilities. A dashboard was built on top of the API to visualize the security posture of all the products across the entire Engineering org.<br>
+                    <u>Tech Stack</u>: Python (Flask), Docker, Helm, Kubernetes (RedHat Openshift), HTML, CSS, JavaScript.</p>
+                    
+                    <p>Built and deployed scripts to automate and entirely manage the lifecycle of Jira tickets related to security findings from the Aquasec tool and present the results comprehensively in a dashboard leveraging AWS (IAM, ECR, EKS, S3, Route53, Secrets Manager), Docker, Kubernetes, Helm, Python, and Shell scripting.</p>
+                    
+                    <p>Coordinated and administered the external penetration testing for various Cloudera products.</p>
+                    
+                    <p>Worked on writing code to engineer a SecOps stack in AWS GovCloud (required for FedRAMP).</p>
+                    
+                    <p>Other responsibilities include peer code reviewing, handling customer requests and escalations, working on-call to monitor the SIEM and SOAR tools for any suspicious alerts, and mentoring an intern to help her complete the 6-month internship project.</p>
+                </div>
+              
+              <button class="collapsible">
+                <div>
+                    <img src="static/imgs/cloudera.png" height="50" width="50" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized">Software Development Engineer I</span>
+                    <span class="dates"> July 2020 - July 2021 </span>
+                    <br>
+                    <strong>Cloudera</strong>
+               </div>
+               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
+              </button>
+                <div class="content">
+                <p>Automated the security scanning process of various security tools (Nessus, Fortify, OWASP Dependency-Check, TLS Check) to enforce the DevSecOps and indirectly the ‘Shift-Left’ strategy. Also engineered nightly jobs to store the scan results in HDFS to be easily queriable by SQL (using Apache Hue's UI).</p>
+
+                <p>Integrated the generation of Software Bill of Materials (SBOM) and Dependency Tree to the build process that helped to inventorize, monitor, and track all the third party libraries/dependencies used in a product and hence correlate that with the security scan results to pinpoint the vulnerable library and its exact source.</p>
+                </div>
+
+
+              <br>
+                <h2 class="section-title">Internships</h2>
+              <br>
+              
+              <button class="collapsible">
+                <div>
+                    <img src="static/imgs/cloudera.png" height="50" width="50" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized">Software Development Engineer Intern</span>
+                    <span class="dates"> January 2020 - July 2020 </span>
+                    <br>
+                    <strong>Cloudera</strong>
+               </div>
+               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
+              </button>
+                <div class="content">
+                <p>Worked in the Platform Security team to build a comprehensive dashboard that portrayed the security status of various products owned by different engineering teams and also help those teams query the relevant results using specific filters thus reducing the turnaround time to fix the security issues. The dashboard has capabilities to portray the scan results by Releases, Projects, Components, and CVEs, also with a provision to look for threat counts based on product release versions and minor versions along with showcasing the Time-Series analysis of issues.</p>
+                </div>
+              
+              <button class="collapsible">
+                <div>
+                    <img src="static/imgs/ril.png" height="50" width="50" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized">Summer Intern</span>
+                    <span class="dates"> May 2019 - July 2019 </span>
+                    <br>
+                    <strong>Reliance Industries Limited</strong>
+               </div>
+               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
+              </button>
+                <div class="content">
+                <p>Worked in the central platform data analytics team to develop a query builder using Python (NLP) / Django / MySQL which boosted the efficiency of the Hive query generation process (in the ETL schedule) by 60% which helped conserve a significant amount of time. Successfully tested the generated query using the Spark architecture.</p>
+                <p>Created a visualization framework for process mining and its deviation using d3 js.</p>
+                </div>
+
+            </div>
+          </section>
+
+          <section id="skills" class="skills">
+            <div class="container">
+              <h2 class="section-title">Skills</h2>
+              <table id="skills_table"></table>
+            </div>
+          </section>
+
+          <section id="certifications" class="certifications">
+            <div class="container">
+              <h2 class="section-title">Certifications</h2>
+              
+              <button class="collapsible" style="cursor: default !important;">
+                <div>
+                    <img src="static/imgs/aws.png" height="55" width="55" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized"><u><a href="https://www.credly.com/badges/34440fef-7968-4b02-9973-978e31ce3bb0/public_url">AWS Certified Machine Learning - Specialty</a></u></span>
+                    <span class="dates"> August 2021 - August 2024 </span>
+                    <br>
+                    <strong>Amazon Web Services (AWS)</strong>
+               </div>
+              </button>
+
+            <button class="collapsible" style="cursor: default !important;">
+              <div>
+                  <img src="static/imgs/google.png" height="55" width="55" align="left" style="margin-right: 15px;" />
+                  <span class="emphasized"><u><a href="https://www.coursera.org/account/accomplishments/verify/6H6DZLZKAUDM">Google Cloud Platform Big Data and Machine Learning Fundamentals</a></u></span>
+                  <span class="dates"> April 2020 </span>
+                  <br>
+                  <strong>Google</strong>
+             </div>
+            </button>
+
+            <button class="collapsible" style="cursor: default !important;">
+              <div>
+                  <img src="static/imgs/stanford.png" height="55" width="55" align="left" style="margin-right: 15px;" />
+                  <span class="emphasized"><u><a href="https://www.coursera.org/account/accomplishments/verify/AQCRJS76Z7BU">Machine Learning</a></u></span>
+                  <span class="dates"> November 2018 </span>
+                  <br>
+                  <strong>Stanford Online</strong>
+             </div>
+            </button>
+
+            <button class="collapsible" style="cursor: default !important;">
+              <div>
+                  <img src="static/imgs/uni_of_colorado.png" height="55" width="55" align="left" style="margin-right: 15px;" />
+                  <span class="emphasized"><u><a href="https://www.coursera.org/account/accomplishments/verify/V4NCZXZLVGGB">Cyber Threats and Attack Vectors</a></u></span>
+                  <span class="dates"> November 2018 </span>
+                  <br>
+                  <strong>University of Colorado</strong>
+             </div>
+            </button>
+
+            <button class="collapsible" style="cursor: default !important;">
+              <div>
+                  <img src="static/imgs/microsoft.png" height="55" width="55" align="left" style="margin-right: 15px;" />
+                  <span class="emphasized"><u><a href="https://drive.google.com/file/d/1g4RVf7doLONSCQ1ZSBxgvnQIjsk9bW4D/view?usp=sharing">Security for the Chief Security Officer (CSO)</a></u></span>
+                  <span class="dates"> July 2018 </span>
+                  <br>
+                  <strong>Microsoft</strong>
+             </div>
+            </button>
+
+            <button class="collapsible" style="cursor: default !important;">
+              <div>
+                  <img src="static/imgs/google.png" height="55" width="55" align="left" style="margin-right: 15px;" />
+                  <span class="emphasized"><u><a href="https://www.coursera.org/account/accomplishments/verify/CE3C45YT5UFV">IT Security: Defense against the digital dark arts</a></u></span>
+                  <span class="dates"> June 2018 </span>
+                  <br>
+                  <strong>Google</strong>
+             </div>
+            </button>
+
+            </div>
+          </section>
+
+          <section id="recommendations" class="recommendations">
+            <div class="container">
+              <h2 class="section-title">Reading Recommendations</h2>
+              <a href="https://saketjajoo77.notion.site/Reading-List-a7361a30a0eb4faea04fd0f47ce14209">Here</a> are a few recommdations for the books/articles/blogs, some of which I have read and enjoyed. Do let me know if you have any recommendations for me!
+            </div>
+          </section>
+
+      </main>
+
+</body>
+
+<footer class="footer dark">
+  <div class="container">
+    <section class="blurb">
+      <p>Design & layout inspired by <u><a href="https://slim.computer/">Sarah Lim</a></u>, hosted on GitHub</p>
+    </section>
+    <ul class="footer__links list-unstyled list-inline">
+      <li>
+        <a href="mailto:saketjajoo77@gmail.com" class="no-highlight"
+          ><i aria-hidden="true" title="Email" class="fa fa-envelope fa-lg"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/saketjajoo" class="no-highlight"
+          ><i aria-hidden="true" title="LinkedIn" class="fa fa-linkedin fa-lg"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://github.com/saketjajoo" class="no-highlight"
+          ><i aria-hidden="true" title="GitHub" class="fa fa-github-alt fa-lg"></i
+        ></a>
+      </li>
+      <li>
+        <a href="https://twitter.com/saket_jajoo" class="no-highlight"
+          ><i aria-hidden="true" title="Twitter" class="fa fa-twitter fa-lg"></i
+        ></a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var arrow = this.children[1];
+        if (this.classList.contains("active")) 
+        {
+            arrow.style.rotate = "90deg";
+        } 
+        else 
+        {
+          arrow.style.rotate = "0deg";
+        } 
+
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight)
+        {
+            content.style.maxHeight = null;
+        } 
+        else 
+        {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } 
+    });
+    }
+
+
+    document.getElementById('skills_table').innerHTML = '';
+
+    var skills = [
+      ['Python', 'fa-brands fa-python'],
+      ['Java', 'fa-brands fa-java'],
+      ['C', 'fa-brands fa-c'],
+      ['C++', 'fa-brands fa-c', '++', 'append_as_text'], // since CPP does not have a fa icon, add ++ after C
+      ['Shell Scripting', 'fa-solid fa-terminal'],
+      ['Git', 'fa-brands fa-git-alt'],
+      ['MySQL', 'fa-solid fa-database'],
+      ['Docker', 'fa-brands fa-docker'],
+      ['Kubernetes', 'fa-solid fa-dharmachakra'],
+      ['AWS', 'fa-brands fa-aws'],
+      ['Jenkins', 'fa-brands fa-jenkins'],
+      ['Terraform', 'fa-brands fa-terraform', 'https://cdn.icon-icons.com/icons2/2148/PNG/512/terraform_icon_131940.png', 'img_url'], // since terraform does not have a fa icon, add its image.
+      ['HTML', 'fa-brands fa-html5'],
+      ['Javascript', 'fa-brands fa-square-js'],
+      ['CSS', 'fa-brands fa-css3-alt'],
+      ['Bootstrap', 'fa-brands fa-bootstrap']
+    ]
+
+    var total_skills = skills.length;
+    
+    table_size = parseInt(Math.sqrt(total_skills));
+    if (window.innerWidth < 600) {
+      table_size = 3;
+    }
+    if (window.innerWidth < 400) {
+      table_size = 2;
+    }
+
+    var tr = null;
+    var prev_row = -1;
+
+    for (var i = 0; i < skills.length; i++)
+    {
+      var row = parseInt(i / table_size);
+      var col = i % table_size;
+
+      if (row != prev_row)
+      {
+          tr = document.createElement('tr');
+          document.getElementById('skills_table').appendChild(tr);
+          prev_row = row;
+      }
+      var td = document.createElement('td');
+          var _i = document.createElement('i');
+          _i.className = skills[i][1] + ' fa-2xl'; // fa-2xl is the size of the icon
+          if (skills[i].length >= 3)
+          {
+            if (skills[i][3] == 'append_as_text')
+            {
+              _i.innerHTML = skills[i][2];
+            }
+            else if (skills[i][3] == 'img_url')
+            {
+              _i.innerHTML = '<img src="' + skills[i][2] + '" height="27" width="27" />';
+            }
+          }
+        td.appendChild(_i);
+        tr.appendChild(td);
+        
+    }
+
+    // if (window.innerWidth < 500)
+    // {
+    //   table_size = 2;
+    // }
+
+    
+    // for (var i = 0; i < table_size; i++)
+    // {
+    //     var tr = document.createElement('tr');
+    //     for (var j = 0; j < table_size; j++)
+    //     {
+    //       var td = document.createElement('td');
+    //         var _i = document.createElement('i');
+    //         _i.className = skills[i*table_size + j][1] + ' fa-2xl'; // fa-2xl is the size of the icon
+    //         if (skills[i*table_size + j].length >= 3)
+    //         {
+    //           if (skills[i*table_size + j][3] == 'append_as_text')
+    //           {
+    //             _i.innerHTML = skills[i*table_size + j][2];
+    //           }
+    //           else if (skills[i*table_size + j][3] == 'img_url')
+    //           {
+    //             _i.innerHTML = '<img src="' + skills[i*table_size + j][2] + '" height="27" width="27" />';
+    //           }
+    //         }
+    //       td.appendChild(_i);
+    //       tr.appendChild(td);
+    //     }
+    //     document.getElementById('skills_table').appendChild(tr);
+    // }
+</script>
+
+</html>
