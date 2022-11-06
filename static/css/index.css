@@ -202,7 +202,12 @@ section p:last-child {
 .header__contact {
     font-family: "Inconsolata", "Consolas", monospace;
     margin: 10px 0;
-    font-size: 90%;
+}
+.header__contact a {
+    background: none;
+    font-family: "Inconsolata", "Consolas", monospace;
+    margin: 10px 0;
+    font-size: 95%;
 }
 .header__links {
     justify-content: center;
