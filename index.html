@@ -11,7 +11,7 @@
     <meta name="robots" content="index" />
 	  <meta name="revisit-after" content="14 days" />
 
-    <title>Saket Jajoo</title>
+    <title>Saket S. Jajoo</title>
     
     <link rel="stylesheet" href="static/css/index.css">
 
@@ -32,7 +32,7 @@
 
     <header class="header container">
         <div class="header__intro">
-          <h1 class="header__title">Saket Jajoo</h1>
+          <h1 class="header__title">Saket S. Jajoo</h1>
           <p class="header__affiliation">CS @ University of Illinois Urbana-Champaign</p>
           <p class="header__contact">
             <a href="mailto:saketjajoo77@gmail.com">saketjajoo77@gmail.com</a>  |   <a href="mailto:saketsj2@illinois.edu">saketsj2@illinois.edu</a></p>
@@ -47,11 +47,11 @@
                 ><i aria-hidden="true" title="GitHub" class="fa fa-github fa-lg"></i
               ></a>
             </li>
-            <li>
+            <!-- <li>
               <a href="https://twitter.com/saket_jajoo" class="no-highlight"
                 ><i aria-hidden="true" title="Twitter" class="fa fa-twitter fa-lg"></i
               ></a>
-            </li>
+            </li> -->
           </ul>
           <nav>
             <ul class="header__nav list-unstyled list-inline">
@@ -139,18 +139,20 @@
                 <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
-                    <p>Developed and maintained a platform-security API that fetched the scan results from various security tools which simplified querying for the results for all engineering teams for their relevant products and services thus resulting in faster resolution of security vulnerabilities. Built a dashboard leveraging the API to visualize the security posture of all the products across the entire Engineering org.<br>
+                    <p>Developed and maintained a containerized "platform-security" API to streamline scan result retrieval from various security tools that helped expedite vulnerability resolution for engineering teams. Built a dashboard leveraging the API to visualize the security posture of all the products across the entire Engineering org.<br>
                     <u>Tech Stack</u>: Python (Flask), Docker, Helm, Kubernetes (RedHat Openshift), HTML, CSS, JavaScript.</p>
                     
-                    <p>Drove the vulnerability triage and remediation with reactive and proactive approaches, including selection of tooling, inspection of scan outputs, and conversion of scan reports into actionable items for the engineering teams. Lead the Vulnerability Management Automation (leveraging Python, Shell Scripting, Docker, Kubernetes, Helm, and AWS [IAM, S3, Route53, SecretsManager, ECR, EKS]) and false positives elimination efforts.</p>
+                    <p>Led vulnerability triage and remediation efforts by employing proactive and reactive strategies, selecting optimal tooling, and writing scripts to convert scan reports into managed actionable items using Python, Shell Scripting, AWS services (IAM, S3, Route53, SecretsManager, ECR, EKS), Docker, Kubernetes, and Helm.</p>
                     
-                    <p>Collaborated with the engineering teams to provide in-depth knowledge and analysis of vulnerabilities and the impacts on their products and services.</p>
+                    <p>Collaborated with the product engineering teams to provide in-depth knowledge and analysis of vulnerabilities and their impacts on their products and services.</p>
+
+                    <p>Coordinated and administered the external penetration testing for various Cloudera products.</p>
                     
                     <p>Worked on writing code to engineer a SecOps stack in AWS GovCloud (required for FedRAMP).</p>
                     
-                    <p>Other responsibilities include peer code reviewing, coordinating external penetration testing, handling customer requests and escalations, working on-call to monitor the SIEM and SOAR tools for any suspicious alerts, and mentoring an intern to help her complete the 6-month internship project.</p>
+                    <p>Other responsibilities include peer code reviewing, handling customer requests and escalations, working on-call to monitor the SIEM and SOAR tools for any suspicious alerts, and mentoring an intern to help her complete the 6-month internship project.</p>
 
-                    <p><a href="https://github.com/cloudera/logredactor/commits?author=saketjajoo">Contributed</a> to Cloudera's OSS <a href="https://github.com/cloudera/logredactor" style="background:none;color:#0969da;">logredactor repo</a>.</p>
+                    <p><a href="https://github.com/cloudera/logredactor/commits?author=saketjajoo">Contributed</a> to Cloudera's OSS <a href="https://github.com/cloudera/logredactor">logredactor repo</a>.</p>
                 </div>
               
               <button class="collapsible">
@@ -164,15 +166,32 @@
                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
-                <p>Automated the security scanning process for various security tools (Nessus, Fortify, OWASP Dependency-Check, TLS Check) to enforce DevSecOps and implicitly the ‘Shift-Left’ strategy. Engineered nightly jobs to store the scan results in HDFS to be easily queriable via SQL (using Apache Hue).</p>
+                <p>Automated security scans via Jenkins for diverse tools (Nessus, Fortify, OWASP Dependency-Check, TLS Check), to enforce DevSecOps and the 'Shift-Left' approach. Engineered nightly jobs to store the scan results in HDFS, ensuring SQL querying via Apache Hue for seamless accessibility.</p>
 
-                <p>Integrated the generation of Software Bill of Materials (SBOM) and Dependency Tree to the CI/CD build process that helped inventorize, monitor, and track all the third party libraries/dependencies used in a product and further correlate that with the security scan results to accurately pinpoint the vulnerable library and its exact source.</p>
+                <p>Integrated Software Bill of Materials (SBOM) and Dependency Tree generation into CI/CD builds to enable comprehensive tracking of 3rd party libraries which facilitated <a href="https://github.com/saketjajoo/Dependency-Analyzer">correlation</a> of security scan results with SBOM, pinpointing vulnerable libraries and their sources accurately.</p>
                 </div>
 
 
               <br>
                 <h2 class="section-title">Internships</h2>
               <br>
+              
+              <button class="collapsible">
+                <div>
+                    <img src="static/imgs/google.png" height="50" width="50" align="left" style="margin-right: 15px;" />
+                    <span class="emphasized">Software Engineering Intern</span>
+                    <span class="dates"> May 2023 - August 2023 </span>
+                    <br>
+                    <strong>Google</strong>
+               </div>
+               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
+              </button>
+                <div class="content">
+                <p>Interned with <a href="https://cloud.google.com/stackdriver/docs/managed-prometheus">Google's Managed Prometheus</a> (GMP) team to build and deploy a containerized application on GKE to benchmark Prometheus. This helped compare the performance of Prometheus across releases, understand how an incoming code change might impact its resource usage and identify any performance bottlenecks. The benchmark results were published via Google Cloud Monitoring.</p>
+                <p>Made valuable open-source contributions throughout the duration of the internship.</p>
+                <p><a href="https://github.com/GoogleCloudPlatform/prometheus-test-infra">Project</a>  |  <a href="https://github.com/prometheus/test-infra/commits?author=saketjajoo">OSS Prombench Contribution</a>  |  <a href="https://github.com/GoogleCloudPlatform/prometheus/commits?author=saketjajoo">OSS Prometheus Contribution</a>
+                </p>
+                </div>
               
               <button class="collapsible">
                 <div>
@@ -185,7 +204,7 @@
                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
-                <p>Worked in the Platform Security team to build a comprehensive dashboard that portrayed the security status of various products owned by a few engineering teams and also help those teams query the relevant results using specific filters thus reducing the turnaround time to fix the security issues. The dashboard had capabilities to portray the scan results by Releases, Projects, Components, and CVEs, also with a provision to look for threat counts based on product release versions and minor versions along with showcasing the Time-Series analysis of issues.</p>
+                <p>Interned in the Platform Security team to build a comprehensive dashboard that portrayed the security status of various products owned by different engineering teams and also helped query relevant results to reduce the turnaround time to fix the security issues. The dashboard showed the scan results grouped by Releases, Projects, Components, and CVEs, and displayed threat counts based on products' release versions and minor versions along with a time-series analysis of issues.</p>
                 </div>
               
               <button class="collapsible">
@@ -199,7 +218,7 @@
                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
-                <p>Worked in the central platform data analytics team to develop a query builder using Python (NLP) / Django / MySQL which boosted the efficiency of the Hive query generation process (in the ETL schedule) by 60% which helped conserve a significant amount of time. Successfully tested the generated query using the Spark architecture.</p>
+                <p>Interned in the central platform data analytics team to develop a query builder using Python (NLP) / Django / MySQL which boosted the efficiency of the Hive query generation process (in the ETL schedule) by ~60%. Successfully tested the generated query using the Spark architecture.</p>
                 <p>Created a visualization framework for process mining and its deviation using d3 js.</p>
                 </div>
 
@@ -364,8 +383,8 @@
       ['Docker', 'fa-brands fa-docker'],
       ['Kubernetes', 'fa-solid fa-dharmachakra'],
       ['AWS', 'fa-brands fa-aws'],
+      ['GCP', 'fa-brands fa-gcp', 'https://cdn.icon-icons.com/icons2/2248/PNG/512/google_cloud_icon_137536.png', 'img_url'], // since GCP does not have a fa icon, add its image.
       ['Jenkins', 'fa-brands fa-jenkins'],
-      ['Terraform', 'fa-brands fa-terraform', 'https://cdn.icon-icons.com/icons2/2148/PNG/512/terraform_icon_131940.png', 'img_url'], // since terraform does not have a fa icon, add its image.
       ['HTML', 'fa-brands fa-html5'],
       ['Javascript', 'fa-brands fa-square-js'],
       ['CSS', 'fa-brands fa-css3-alt'],
