@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Saket Jajoo" />
-    <meta name="keywords" content="Saket Jajoo, Resume, Backend Developer, Storage and Distributed Systems, Microservices, Cloud Computing, Computer Networks, Algorithms, Computer Vision, Machine Learning, Product Security, Information Security, DevOps, DevSecOps" />
+    <meta name="keywords" content="Saket Jajoo, Resume, Software Engineer, Backend Developer, Storage and Distributed Systems, Microservices, Cloud Computing, Computer Networks, Algorithms, Computer Vision, Machine Learning, Product Security, Information Security, DevOps, DevSecOps" />
     <meta name="robots" content="index" />
 	  <meta name="revisit-after" content="14 days" />
 
@@ -57,6 +57,7 @@
             <ul class="header__nav list-unstyled list-inline">
               <li><a data-scroll="data-scroll" href="#education">Education</a></li>
               <li><a data-scroll="data-scroll" href="#experience">Experience</a></li>
+              <li><a data-scroll="data-scroll" href="#osscontributions">OSS Contributions</a></li>
               <li><a data-scroll="data-scroll" href="#skills">Skills</a></li>
               <li><a data-scroll="data-scroll" href="#certifications">Certifications</a></li>
               <li><a data-scroll="data-scroll" href="#recommendations">Reading Recommendations</a></li>
@@ -189,7 +190,7 @@
                 <div class="content">
                 <p>Interned with <a href="https://cloud.google.com/stackdriver/docs/managed-prometheus">Google's Managed Prometheus</a> (GMP) team to build and deploy a containerized application on GKE to benchmark Prometheus. This helped compare the performance of Prometheus across releases, understand how an incoming code change might impact its resource usage and identify any performance bottlenecks. The benchmark results were published via Google Cloud Monitoring.</p>
                 <p>Made valuable open-source contributions throughout the duration of the internship.</p>
-                <p><a href="https://github.com/GoogleCloudPlatform/prometheus-test-infra">Project</a>  |  <a href="https://github.com/prometheus/test-infra/commits?author=saketjajoo">OSS Prombench Contribution</a>  |  <a href="https://github.com/GoogleCloudPlatform/prometheus/commits/release-2.35.0-gmp?author=saketjajoo">GMP Prometheus Contribution</a>
+                <p><a href="https://github.com/GoogleCloudPlatform/prometheus-test-infra">Project</a>  |  <a href="https://github.com/prometheus/test-infra/commits?author=saketjajoo">OSS Prombench Contribution</a>  |  <a href="https://github.com/GoogleCloudPlatform/prometheus/commits/archive-2.35.0-gmp?author=saketjajoo">GMP Prometheus Contribution</a>
                 </p>
                 </div>
               
@@ -222,6 +223,13 @@
                 <p>Created a visualization framework for process mining and its deviation using d3 js.</p>
                 </div>
 
+            </div>
+          </section>
+
+          <section id="osscontributions" class="osscontributions">
+            <div class="container">
+              <h2 class="section-title">Open Source Contributions</h2>
+              <table id="oss_table"></table>
             </div>
           </section>
 
@@ -369,7 +377,7 @@
     });
     }
 
-
+    // Skills Table
     document.getElementById('skills_table').innerHTML = '';
 
     var skills = [
@@ -434,36 +442,96 @@
         
     }
 
-    // if (window.innerWidth < 500)
-    // {
-    //   table_size = 2;
-    // }
-
     
-    // for (var i = 0; i < table_size; i++)
-    // {
-    //     var tr = document.createElement('tr');
-    //     for (var j = 0; j < table_size; j++)
-    //     {
-    //       var td = document.createElement('td');
-    //         var _i = document.createElement('i');
-    //         _i.className = skills[i*table_size + j][1] + ' fa-2xl'; // fa-2xl is the size of the icon
-    //         if (skills[i*table_size + j].length >= 3)
-    //         {
-    //           if (skills[i*table_size + j][3] == 'append_as_text')
-    //           {
-    //             _i.innerHTML = skills[i*table_size + j][2];
-    //           }
-    //           else if (skills[i*table_size + j][3] == 'img_url')
-    //           {
-    //             _i.innerHTML = '<img src="' + skills[i*table_size + j][2] + '" height="27" width="27" />';
-    //           }
-    //         }
-    //       td.appendChild(_i);
-    //       tr.appendChild(td);
-    //     }
-    //     document.getElementById('skills_table').appendChild(tr);
-    // }
+    // OSS Contributions Table
+    document.getElementById('oss_table').innerHTML = '';
+
+    var contributions = [
+      {
+        'title': 'Cloudera\'s Logredactor',
+        'repo': 'https://github.com/cloudera/logredactor',
+        'commits': 'https://github.com/cloudera/logredactor/commits?author=saketjajoo',
+        'img': 'static/imgs/cloudera.png'
+      },
+      {
+        'title': 'Prometheus Test Infra',
+        'repo': 'https://github.com/prometheus/test-infra',
+        'commits': 'https://github.com/prometheus/test-infra/commits?author=saketjajoo',
+        'img': 'https://avatars.githubusercontent.com/u/3380462?s=200&v=4'
+      },
+      {
+        'title': 'OWASP Dep Scan',
+        'repo': 'https://github.com/owasp-dep-scan/dep-scan',
+        'commits': 'https://github.com/owasp-dep-scan/dep-scan/commits?author=saketjajoo',
+        'img': 'https://raw.githubusercontent.com/owasp-dep-scan/dep-scan/master/dep-scan.png'
+      }
+    ];
+
+    var total_contributions = contributions.length;
+    
+    table_size = parseInt(Math.sqrt(total_skills));
+    if (window.innerWidth < 600) {
+      table_size = 3;
+    }
+    if (window.innerWidth < 400) {
+      table_size = 2;
+    }
+
+    var tr = null;
+    var prev_row = -1;
+
+    for (var i = 0; i < contributions.length; i++)
+    {
+      var row = parseInt(i / table_size);
+      var col = i % table_size;
+
+      if (row != prev_row)
+      {
+          tr = document.createElement('tr');
+          document.getElementById('oss_table').appendChild(tr);
+          prev_row = row;
+      }
+
+      var td = document.createElement('td');
+          var _btn = document.createElement('button');
+          _btn.className = 'collapsible';
+          _btn.style = 'cursor: default !important';
+            var _div = document.createElement('div');
+              
+            var _img = document.createElement('img');
+              _img.src = contributions[i]['img'];
+              _img.height = '55';
+              _img.width = '55';
+              _img.align = 'left';
+              _img.style = 'margin-right: 15px;';
+              
+              var _span = document.createElement('span');
+              _span.className = 'emphasized';
+                var _a = document.createElement('a');
+                _a.href = contributions[i]['repo'];
+                _a.innerHTML = contributions[i]['title'];
+              _span.appendChild(_a);
+              
+              var _br = document.createElement('br');
+              
+              var _strong = document.createElement('strong');
+                var _a = document.createElement('a');
+                _a.href = contributions[i]['commits'];
+                _a.style = 'background: transparent;text-decoration: underline;';
+                _a.innerHTML = 'Commits';
+              _strong.appendChild(_a);
+            
+            _div.appendChild(_img);
+            _div.appendChild(_span);
+            _div.appendChild(_br);
+            _div.appendChild(_strong);
+          
+          _btn.appendChild(_div);
+        
+        td.appendChild(_btn);
+        tr.appendChild(td);
+    }
+
 </script>
 
 </html>
