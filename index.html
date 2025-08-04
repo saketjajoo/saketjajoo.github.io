@@ -81,8 +81,6 @@
                 I received my master's degree (MCS) in Computer Science from the
                 <a href="https://cs.illinois.edu/">University of Illinois Urbana-Champaign</a>, focussing in the domain of
                 Distributed and Storage Systems.
-              </p>
-              <p>
                 I received my bachelor's degree (B.Tech.) in Computer Science and Engineering from
                 <a href="https://vit.ac.in/">Vellore Institute of Technology</a>, concentrating in 
                 Information Security.
@@ -276,7 +274,7 @@
           <section id="osscontributions" class="osscontributions">
             <div class="container">
               <h2 class="section-title">Open Source Contributions</h2>
-              <table id="oss_table"></table>
+               <div id="oss_grid"></div>
             </div>
           </section>
 
@@ -428,22 +426,21 @@
     document.getElementById('skills_table').innerHTML = '';
 
     var skills = [
-      ['Python', 'fa-brands fa-python'],
-      ['Java', 'fa-brands fa-java'],
-      ['C', 'fa-brands fa-c'],
-      ['C++', 'fa-brands fa-c', '++', 'append_as_text'], // since CPP does not have a fa icon, add ++ after C
-      ['Shell Scripting', 'fa-solid fa-terminal'],
-      ['Git', 'fa-brands fa-git-alt'],
-      ['MySQL', 'fa-solid fa-database'],
-      ['Docker', 'fa-brands fa-docker'],
-      ['Kubernetes', 'fa-solid fa-dharmachakra'],
-      ['AWS', 'fa-brands fa-aws'],
-      ['GCP', 'fa-brands fa-gcp', 'https://cdn.icon-icons.com/icons2/2248/PNG/512/google_cloud_icon_137536.png', 'img_url'], // since GCP does not have a fa icon, add its image.
-      ['Jenkins', 'fa-brands fa-jenkins'],
-      ['HTML', 'fa-brands fa-html5'],
-      ['Javascript', 'fa-brands fa-square-js'],
-      ['CSS', 'fa-brands fa-css3-alt'],
-      ['Bootstrap', 'fa-brands fa-bootstrap']
+      ['Python', 'https://images.icon-icons.com/2107/PNG/512/file_type_python_icon_130221.png', 'img_url'],
+      ['Go', 'https://images.icon-icons.com/2699/PNG/512/golang_logo_icon_171073.png', 'img_url'],
+      ['Java', 'https://images.icon-icons.com/2699/PNG/512/java_logo_icon_169577.png', 'img_url'],
+      ['C', 'https://images.icon-icons.com/2415/PNG/512/c_original_logo_icon_146611.png', 'img_url'],
+      ['C++', 'https://images.icon-icons.com/2148/PNG/512/c_icon_132529.png', 'img_url'],
+      ['Javascript', 'https://images.icon-icons.com/2108/PNG/512/javascript_icon_130900.png', 'img_url'],
+      ['Shell Scripting', 'https://images.icon-icons.com/512/PNG/512/prog-bash02_icon-icons.com_50815.png', 'img_url'],
+      ['Git', 'https://images.icon-icons.com/2107/PNG/512/file_type_git_icon_130581.png', 'img_url'],
+      ['MySQL', 'https://images.icon-icons.com/2699/PNG/512/mysql_official_logo_icon_169938.png', 'img_url'],
+      ['Docker', 'https://images.icon-icons.com/2407/PNG/512/docker_icon_146192.png', 'img_url'],
+      ['Kubernetes', 'https://images.icon-icons.com/2699/PNG/512/kubernetes_logo_icon_168359.png', 'img_url'],
+      ['AWS', 'https://a0.awsstatic.com/libra-css/images/site/touch-icon-ipad-144-smile.png', 'img_url'],
+      ['GCP', 'https://www.gstatic.com/cgc/super_cloud.png', 'img_url'],
+      ['Jenkins', 'https://images.icon-icons.com/2699/PNG/512/jenkins_logo_icon_170552.png', 'img_url'],
+      ['GKE', 'https://icon.icepanel.io/GCP/svg/Google-Kubernetes-Engine.svg', 'img_url'],
     ];
 
     var total_skills = skills.length;
@@ -472,16 +469,15 @@
       }
       var td = document.createElement('td');
           var _i = document.createElement('i');
-          _i.className = skills[i][1] + ' fa-2xl'; // fa-2xl is the size of the icon
-          if (skills[i].length >= 3)
+          if (skills[i].length >= 2)
           {
-            if (skills[i][3] == 'append_as_text')
+            if (skills[i][2] == 'append_as_text')
             {
-              _i.innerHTML = skills[i][2];
+              _i.innerHTML = skills[i][1];
             }
-            else if (skills[i][3] == 'img_url')
+            else if (skills[i][2] == 'img_url')
             {
-              _i.innerHTML = '<img src="' + skills[i][2] + '" height="27" width="27" />';
+              _i.innerHTML = '<img src="' + skills[i][1] + '" height="40" width="40" />';
             }
           }
         td.appendChild(_i);
@@ -489,11 +485,15 @@
         
     }
 
-    
-    // OSS Contributions Table
-    document.getElementById('oss_table').innerHTML = '';
+    document.getElementById('oss_grid').innerHTML = '';
 
     var contributions = [
+      {
+        'title': 'containerd',
+        'repo': 'https://github.com/containerd/containerd',
+        'commits': 'https://github.com/containerd/containerd/commits?author=saketjajoo',
+        'img': 'static/imgs/containerd.png'
+      },
       {
         'title': 'Cloudera\'s Logredactor',
         'repo': 'https://github.com/cloudera/logredactor',
@@ -514,70 +514,39 @@
       }
     ];
 
-    var total_contributions = contributions.length;
-    
-    table_size = parseInt(Math.sqrt(total_skills));
-    if (window.innerWidth < 600) {
-      table_size = 3;
+    for (var i = 0; i < contributions.length; i++) {
+      var item = document.createElement('div');
+      item.className = 'oss-item';
+
+      var link = document.createElement('a');
+      link.href = contributions[i]['commits'];
+      link.style.display = 'block';
+      link.style.color = 'inherit';
+      link.style.textDecoration = 'none';
+      link.style.textAlign = 'center';
+      link.style.background = 'transparent';
+
+      var img = document.createElement('img');
+      img.src = contributions[i]['img'];
+      img.height = 40;
+      img.width = 40;
+      img.style.display = 'block';
+      img.style.margin = '0 auto 5px';
+
+      var title = document.createElement('span');
+      title.innerText = contributions[i]['title'];
+      title.style.fontSize = 'medium';
+      title.style.fontWeight = 'bold';
+      title.style.display = 'block';
+      title.style.background = 'rgba(245, 215, 110, 0.5)';
+
+      link.appendChild(img);
+      link.appendChild(title);
+
+      item.appendChild(link);
+      document.getElementById('oss_grid').appendChild(item);
     }
-    if (window.innerWidth < 400) {
-      table_size = 2;
-    }
 
-    var tr = null;
-    var prev_row = -1;
-
-    for (var i = 0; i < contributions.length; i++)
-    {
-      var row = parseInt(i / table_size);
-      var col = i % table_size;
-
-      if (row != prev_row)
-      {
-          tr = document.createElement('tr');
-          document.getElementById('oss_table').appendChild(tr);
-          prev_row = row;
-      }
-
-      var td = document.createElement('td');
-          var _btn = document.createElement('button');
-          _btn.className = 'collapsible';
-          _btn.style = 'cursor: default !important';
-            var _div = document.createElement('div');
-              
-            var _img = document.createElement('img');
-              _img.src = contributions[i]['img'];
-              _img.height = '55';
-              _img.width = '55';
-              _img.align = 'left';
-              _img.style = 'margin-right: 15px;';
-              
-              var _span = document.createElement('span');
-              _span.className = 'emphasized';
-                var _a = document.createElement('a');
-                _a.href = contributions[i]['repo'];
-                _a.innerHTML = contributions[i]['title'];
-              _span.appendChild(_a);
-              
-              var _br = document.createElement('br');
-              
-              var _strong = document.createElement('strong');
-                var _a = document.createElement('a');
-                _a.href = contributions[i]['commits'];
-                _a.style = 'background: transparent;text-decoration: underline;';
-                _a.innerHTML = 'Commits';
-              _strong.appendChild(_a);
-            
-            _div.appendChild(_img);
-            _div.appendChild(_span);
-            _div.appendChild(_br);
-            _div.appendChild(_strong);
-          
-          _btn.appendChild(_div);
-        
-        td.appendChild(_btn);
-        tr.appendChild(td);
-    }
 
 </script>
 

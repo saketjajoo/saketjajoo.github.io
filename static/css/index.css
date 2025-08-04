@@ -365,3 +365,25 @@ table td
     color: #fff;
     background-color: #202631;
 }
+
+#oss_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+.oss-item {
+  text-align: center;
+  width: 20%;
+}
+@media (max-width: 600px) {
+  .oss-item {
+    width: 45%;
+  }
+}
+@media (max-width: 400px) {
+  .oss-item {
+    width: 90%;
+  }
+}
