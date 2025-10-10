@@ -233,7 +233,7 @@ section p:last-child {
     }
 }
 
-.header, .container {
+.container {
     border-bottom: 2px solid #ececec;
     z-index: 10;
 }

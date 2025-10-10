@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="static/css/index.css">
 
     <script src="https://kit.fontawesome.com/90ba02e172.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script> $(function(){ $("#header").load("header.html"); }); </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G1E3WF0BL"></script>
@@ -30,41 +32,7 @@
 
 <body>
 
-    <header class="header container">
-        <div class="header__intro">
-          <h1 class="header__title">Saket S. Jajoo</h1>
-          <p class="header__affiliation">Software Engineer @ Google</p>
-          <p class="header__contact">
-            <a href="mailto:saketjajoo77@gmail.com">saketjajoo77@gmail.com</a>  |   <a href="mailto:saketsj2@illinois.edu">saketsj2@illinois.edu</a></p>
-          <ul class="header__links list-unstyled list-inline">
-            <li>
-              <a href="https://www.linkedin.com/in/saketjajoo" class="no-highlight"
-                ><i aria-hidden="true" title="LinkedIn" class="fa fa-linkedin fa-lg"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://github.com/saketjajoo" class="no-highlight"
-                ><i aria-hidden="true" title="GitHub" class="fa fa-github fa-lg"></i
-              ></a>
-            </li>
-            <!-- <li>
-              <a href="https://twitter.com/saket_jajoo" class="no-highlight"
-                ><i aria-hidden="true" title="Twitter" class="fa fa-twitter fa-lg"></i
-              ></a>
-            </li> -->
-          </ul>
-          <nav>
-            <ul class="header__nav list-unstyled list-inline">
-              <li><a data-scroll="data-scroll" href="#education">Education</a></li>
-              <li><a data-scroll="data-scroll" href="#experience">Experience</a></li>
-              <li><a data-scroll="data-scroll" href="#osscontributions">OSS Contributions</a></li>
-              <li><a data-scroll="data-scroll" href="#skills">Skills</a></li>
-              <li><a data-scroll="data-scroll" href="#certifications">Certifications</a></li>
-              <li><a data-scroll="data-scroll" href="#recommendations">Reading Recommendations</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+    <header id="header" class="header container"></header>
 
       <main>
 
