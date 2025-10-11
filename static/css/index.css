@@ -389,29 +389,29 @@ table td
 }
 
 .achievements__item-date, .achievements__item-description {
-    display:inline-block;
-    vertical-align:top
+    display: inline-block;
+    vertical-align: top
 }
 
 .achievements__item-date {
-    font-style:italic;
-    font-weight:600;
-    font-size:.9rem;
-    display:block
+    font-style: italic;
+    font-weight: 600;
+    font-size: .9rem;
+    display: block
 }
 
 .achievements__item-description {
-    margin-bottom:10px
+    margin-bottom: 10px
 }
 
 @media(min-width: 640px) {
   .achievements__item-date {
-    width:15%;
-    text-align:right;
-    padding-right:20px;
-    display:inline-block
+    width: 15%;
+    text-align: right;
+    padding-right: 20px;
+    display: inline-block
   }
   .achievements__item-description {
-    width:80%
+    width: 80%
   }
 }

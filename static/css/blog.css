@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+.blog__ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.blog__li {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+.blog__li-date {
+  width: 120px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: right;
+  margin-left: 1.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.blog__li-item {
+  flex: 1;
+  text-align: left;
+}
+
+.blog__li a {
+  font-weight: bold !important;
+  font-size: 1rem;
+  text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.blog__li a:hover {
+  font-weight: bold !important;
+  text-decoration: underline !important;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #e7e6e6 !important;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .blog__li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blog__li-date {
+    width: auto;
+    margin: 0 0 4px 0;
+    text-align: center;
+  }
+
+  .blog__li-item {
+    text-align: center;
+  }
+}

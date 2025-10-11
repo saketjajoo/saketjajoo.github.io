@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Saket Jajoo" />
+    <meta name="keywords" content="Saket Jajoo, Resume, Software Engineer, Backend Developer, Storage and Distributed Systems, Microservices, Kubernetes, Containers, Cloud Computing, Computer Networks, Algorithms, Computer Vision, Machine Learning, Product Security, Information Security, DevOps, DevSecOps" />
+    <meta name="robots" content="index" />
+	  <meta name="revisit-after" content="14 days" />
+
+    <title>Saket S. Jajoo - Blog - Kubernetes Reconciler Loop</title>
+    
+    <link rel="stylesheet" href="../../static/css/blog_content.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G1E3WF0BL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3G1E3WF0BL');
+    </script>
+</head>
+
+<body>
+  <header class="blog-header container">
+    <a href="../blog.html" class="home-link no-highlight">← All Blogs</a>
+  </header>
+
+  <main id="content" class="blog-content container">
+    <p>Loading post...</p>
+  </main>
+
+  <script>
+
+    const postName = window.location.pathname.split('/').pop().replace('.html', '');
+    const markdownPath = `./posts/${postName}.md`;
+
+    fetch(markdownPath)
+      .then(response => {
+        if (!response.ok) throw new Error(`Could not find ${markdownPath}`);
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById('content').innerHTML = marked.parse(text);
+        document.querySelectorAll('pre code').forEach(block => {
+          hljs.highlightElement(block);
+        });
+      })
+      .catch(err => {
+        document.getElementById('content').innerHTML = `
+          <p style="color:#888;text-align:center;">⚠️ Could not load this post.<br><small>${err.message}</small></p>
+        `;
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
