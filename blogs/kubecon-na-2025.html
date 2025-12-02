@@ -12,6 +12,7 @@
 	  <meta name="revisit-after" content="14 days" />
 
     <title>Saket S. Jajoo - Blog - Presenting GKE Pod Snapshots at KubeCon + CloudNativeCon NA 2025</title>
+    <link rel="icon" type="image/png" href="https://images.icon-icons.com/2699/PNG/512/kubernetes_logo_icon_168359.png">
 
     
     <link rel="stylesheet" href="../../static/css/blog_content.css">
@@ -33,9 +34,31 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        .img-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .img-row img {
+            width: 49%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
         @media (max-width: 768px) {
             .responsive-img {
                 width: 95%;
+            }
+
+            .img-row {
+                flex-direction: column;
+            }
+            .img-row img {
+                width: 100%;
             }
         }
 

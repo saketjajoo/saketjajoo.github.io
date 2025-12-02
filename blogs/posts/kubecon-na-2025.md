@@ -6,7 +6,10 @@
 
 Attending [KubeCon + CloudNativeCon NA 2025](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/) in Atlanta last week was a milestone for me. As the Cloud Native Computing Foundation’s flagship conference, KubeCon is attended by adopters and technologists from leading open source and cloud-native communities to further the education and advancement of cloud computing technologies. Being there in person alongside approximately 10,000 attendees was amazing! It was not only my first time experiencing the energy of the conference, but I also had the privilege of standing at the Google Cloud booth to introduce a feature we’ve been working hard on: **GKE Pod Snapshots**.
 
-<img src="../../static/imgs/kubecon/booth.jpeg" alt="Photo of the Google Cloud Booth at KubeCon" class="responsive-img"/>
+<div class="img-row">
+  <img src="../../static/imgs/kubecon/booth.jpeg" alt="Photo of the Google Cloud Booth at KubeCon" />
+  <img src="../../static/imgs/kubecon/kubecon-badge.jpg" alt="Because if I don't post this, did I really even go?" />
+</div>
 
 ## Presenting "Supercharge Pod Startup with Pod Snapshots" 🔥
 
@@ -68,6 +71,16 @@ During restore, the application's state is directly loaded into the CPU and GPU 
 ### A Seamless, Kubernetes-Native Experience
 
 We designed this to be a fully CRD-driven and automated workflow. Users simply define a _PodSnapshotPolicy_ that selects their target workload and points to a storage configuration. GKE handles the rest—automatically creating snapshots when the workload changes and restoring them for new replicas. It’s designed to be workload-agnostic, supporting everything from complex monoliths to stateful AI inference servers.
+
+<object class="pdf-viewer" data="../../static/content/KubeCon_GKE_Pod_Snapshots_Presentation.pdf" type="application/pdf">
+    <div style="padding: 20px; text-align: center; background: #f9f9f9; border-radius: 8px;">
+        <p style="margin-bottom: 10px;">It appears your browser cannot display the PDF inline.</p>
+        <a href="../../static/pdfs/kubecon-na-2025-pod-snapshots.pdf" 
+           style="background-color: #0c7caa; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+           Download Slides Instead 📄
+        </a>
+    </div>
+</object>
 
 ## Media Coverage 📰
 
