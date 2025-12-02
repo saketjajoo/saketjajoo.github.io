@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
 
@@ -56,6 +57,12 @@
         document.querySelectorAll('pre code').forEach(block => {
           hljs.highlightElement(block);
         });
+
+        try {
+          mermaid.run();
+        } catch (e) {
+          console.error("Mermaid.js run error:", e);
+        }
       })
       .catch(err => {
         document.getElementById('content').innerHTML = `

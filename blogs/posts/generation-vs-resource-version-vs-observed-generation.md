@@ -11,13 +11,13 @@ The answer lies in three metadata fields that are critical: `metadata.generation
 ## resourceVersion: The "When"
 The [resourceVersion](https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions) is the most granular field of the three.
 * **What**: It is a string (not a number) that represents the internal version of the object in etcd.
-* **When does it change**: It changes wit _every_ modification to an object, whether it's a change in `spec`, `status` or `metadata`.
+* **When does it change**: It changes with _every_ modification to an object, whether it's a change in `spec`, `status` or `metadata`.
 * **Why**:
   * **Optimistic Concurrency Control**: When an object is updated, the `resourceVersion` of the object is sent. If the `resourceVersion` in etcd is different (meaning someone else changed it since it was last read), the API server will reject this update. This prevents from accidentally overwriting someone else's changes.
   * **The `watch` mechanism**: Kubernetes controllers use `watch` to subscribe to changes. They tell the API server "_send me all changes for an object starting from resourceVersion X_". The API server then streams all subsequent changes (adds, modifications, deletes) for that object, allowing controllers to react without constantly polling the entire cluster.
 
 ### resourceVersion = "0": A Special Case  
-* `get` / `list`: When the `resourceVersion` is set to `"0"` in a`get` or a `list` request, it tells the API server to return the object at _any_ resource version. This means that the caller is willing to accept a stale object and the API server serves this object from its cache instead of reading it fro etcd.
+* `get` / `list`: When the `resourceVersion` is set to `"0"` in a `get` or a `list` request, it tells the API server to return the object at _any_ resource version. This means that the caller is willing to accept a stale object and the API server serves this object from its cache instead of reading it from etcd.
 
 * `watch` (List-Then-Watch): The API server first does a list of _all_ current objects and sends those disguised as `ADD` events via which a controller populates its local cache. After this, the API server sends a `BOOKMARK` event with a recent, real `resourceVersion`. From this point onwards, it streams live `ADD`, `MODIFY`, and `DELETE` events.
 

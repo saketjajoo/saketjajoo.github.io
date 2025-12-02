@@ -279,6 +279,21 @@ section p:last-child {
     margin-right: 10px;
 }
 
+.content p {
+    margin-bottom: 8px !important;
+}
+.content .team_name {
+    display: inline-block; 
+    background-color: #e0e0e0; 
+    color: #333; 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    font-size: 0.85em; 
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
 table
 {
     width: 100%;
@@ -290,6 +305,62 @@ table td
 {
     padding: 18px;
     text-align: center;
+}
+
+#oss_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.oss-item {
+    text-align: center;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.oss-item a {
+    display: block;
+    width: 100%;
+    background: transparent;
+}
+.oss-item img {
+    display: block;
+    margin: 0 auto 10px;
+    height: 40px;
+    width: 40px;
+}
+.oss-item span {
+    font-weight: bold;
+    font-size: 0.9rem;
+    background: rgba(245, 215, 110, 0.5);
+    padding: 2px 5px;
+}
+
+#skills_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#skills_grid div {
+    text-align: center;
+}
+
+#skills_grid img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+#skills_grid img:hover {
+    transform: scale(1.1);
 }
 
 .footer 
@@ -364,28 +435,6 @@ table td
 {
     color: #fff;
     background-color: #202631;
-}
-
-#oss_grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
-}
-.oss-item {
-  text-align: center;
-  width: 20%;
-}
-@media (max-width: 600px) {
-  .oss-item {
-    width: 45%;
-  }
-}
-@media (max-width: 400px) {
-  .oss-item {
-    width: 90%;
-  }
 }
 
 .achievements__item-date, .achievements__item-description {

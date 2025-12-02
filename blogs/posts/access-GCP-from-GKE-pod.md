@@ -4,9 +4,9 @@
 
 ---
 
-Applications on Googler Kubernetes Engine (GKE) may often need to interact with Google Cloud Platform (GCP) services such as Cloud Storage, BigQuery, Pub/Sub, etc. One option to grant such access is by creating a Google Cloud Service Accoun (GSA), download its SA key file (json), store it as a Kubernetes Secret, and mount it to the pod. Although this works fine, it introduces several security risks around Key Management, Key Rotation, Secret Exposure, and more which further adds to operational overheads. The JSON key is a long lived credential that, if compromised, can lead to unauthorized access to GCP resources.
+Applications on Google Kubernetes Engine (GKE) may often need to interact with Google Cloud Platform (GCP) services such as Cloud Storage, BigQuery, Pub/Sub, etc. One option to grant such access is by creating a Google Cloud Service Account (GSA), download its SA key file (json), store it as a Kubernetes Secret, and mount it to the pod. Although this works fine, it introduces several security risks around Key Management, Key Rotation, Secret Exposure, and more which further adds to operational overheads. The JSON key is a long lived credential that, if compromised, can lead to unauthorized access to GCP resources.
 
-A more secure and manageable way to grant GCP access to applications running on GKE is by using [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity). 
+A more secure and manageable way to grant GCP access to applications running on GKE is by using [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity).
 
 
 ## What is Workload Identity?
@@ -33,7 +33,7 @@ This token exchange process is transparent to the application running in the pod
 
 #### Pre-requisites
 
-1. [Workload Identity must be enabled]((https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)) on the GKE cluster.
+1. [Workload Identity must be enabled](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) on the GKE cluster.
 
 2. [Create a GCP Service Account](https://cloud.google.com/iam/docs/service-accounts-create#creating) and [grant it](https://cloud.google.com/sdk/gcloud/reference/projects/add-iam-policy-binding) the necessary IAM roles to access the required GCP resources.
 
@@ -65,6 +65,23 @@ roleRef:
 ```
 
 4. [Bind the KSA to the GSA](https://cloud.google.com/kubernetes-engine/enterprise/knative-serving/docs/securing/workload-identity#binding_service_accounts).
+
+<div class="mermaid">
+sequenceDiagram
+    participant Pod
+    participant GKE_Metadata
+    participant GCP_STS
+    participant GCP_IAM
+    Pod->>GKE_Metadata: 1. Request KSA Token (JWT)
+    GKE_Metadata-->>Pod: Returns Signed KSA Token
+    Pod->>GKE_Metadata: 2. Exchange KSA Token for GSA Token
+    GKE_Metadata->>GCP_STS: 3. Call STS (Exchange Token)
+    GCP_STS->>GCP_IAM: 4. Verify IAM Binding (workloadIdentityUser)
+    GCP_IAM-->>GCP_STS: Valid
+    GCP_STS-->>GKE_Metadata: Returns Short-lived GSA Access Token
+    GKE_Metadata-->>Pod: Returns GSA Access Token
+    Pod->>GCP_IAM: 5. Access GCP Resource (using GSA Token)
+</div>
 
 
 #### Code Snippet
