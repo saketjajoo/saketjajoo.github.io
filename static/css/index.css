@@ -234,7 +234,7 @@ section p:last-child {
 }
 
 .container {
-    border-bottom: 2px solid #ececec;
+    border-bottom: 2px solid #e2e8f0;
     z-index: 10;
 }
 
@@ -266,8 +266,8 @@ section p:last-child {
 }
 .content {
     padding: 0 10px;
-    max-height: 0;
-    overflow: hidden;
+    max-height: none;
+    overflow: visible;
     transition: max-height 0.2s ease-out;
     margin: 7px 0;
     text-align: justify;

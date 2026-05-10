@@ -61,7 +61,6 @@
                     <br>
                     <strong>Google</strong> <span style="font-weight: normal; opacity: 0.7;">&nbsp;|&nbsp; GKE AI Runtime Team</span>
                </div>
-                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
 
@@ -74,25 +73,23 @@
 
                     <p><a href="./blogs/kubecon-na-2025.html">Co-presented</a> the architecture and benchmarks at <a href="https://events.linuxfoundation.org/archive/2025/kubecon-cloudnativecon-north-america/">KubeCon + CloudNativeCon NA 2025</a>.</p>
 
-                    <div style="margin-bottom: 5px; margin-top: 25px; border-top: 1px dashed #ccc; padding-top: 15px;">
+                    <div style="margin-bottom: 5px; margin-top: 25px; padding-top: 15px;">
                         <strong class="emphasized" style="font-size: 1.1em; background: transparent;">Software Engineer II</strong>
                         <span class="dates" style="font-style: italic; font-size: 15px; background: transparent;"> May 2024 - October 2025 </span>
                     </div>
 
                     <p>Engineered <a href="https://cloud.google.com/blog/products/containers-kubernetes/improving-gke-container-image-streaming-for-faster-app-startup">optimizations</a> for <a href="https://docs.cloud.google.com/kubernetes-engine/docs/how-to/image-streaming">GKE Image Streaming</a> to reduce image pull latencies by ~30%. As of May 2026, active across 72M+ nodes in 276K+ clusters. Owned the full development lifecycle and served as the primary technical point of contact for complex escalations.</p>
                     
-                    <br>
                 </div>
 
-              <button class="collapsible">
-                <div>
+              <button class="collapsible" style="border-top: 1px dashed #ccc;">
+                <div style="padding-top: 15px;">
                     <img src="static/imgs/databricks.png" height="50" width="50" align="left" style="margin-right: 15px;" />
                     <span class="emphasized">Software Engineer</span>
                     <span class="dates"> January 2024 - May 2024 </span>
                     <br>
                     <strong>Databricks</strong> <span style="font-weight: normal; opacity: 0.7;">&nbsp;|&nbsp; Notebook Dataplane Team</span>
                </div>
-                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
                     
@@ -105,15 +102,14 @@
                     <p>Enhanced customer experience by backporting internal context states to DBR version 13.3.</p>
                 </div>
 
-              <button class="collapsible">
-                <div>
+              <button class="collapsible" style="border-top: 1px dashed #ccc;">
+                <div style="padding-top: 15px;">
                     <img src="static/imgs/cloudera.png" height="50" width="50" align="left" style="margin-right: 15px;" />
                     <span class="emphasized">Software Engineer II</span>
                     <span class="dates"> July 2020 - July 2022 </span>
                     <br>
                     <strong>Cloudera</strong> <span style="font-weight: normal; opacity: 0.7;">&nbsp;|&nbsp; Product Security Team</span>
                </div>
-                <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
 
@@ -130,7 +126,7 @@
 
                     <p>Served as the primary coordinator for external penetration testing and internal security escalations.</p>
 
-                    <div style="margin-bottom: 5px; margin-top: 25px; border-top: 1px dashed #ccc; padding-top: 15px;">
+                    <div style="margin-bottom: 5px; margin-top: 25px; padding-top: 15px;">
                         <strong class="emphasized" style="font-size: 1.1em; background: transparent;">Software Engineer I</strong>
                         <span class="dates" style="font-style: italic; font-size: 15px; background: transparent;"> July 2020 - July 2021 </span>
                     </div>
@@ -153,7 +149,6 @@
                     <br>
                     <strong>Google</strong> <span style="font-weight: normal; opacity: 0.7;">&nbsp;|&nbsp; <a href="https://cloud.google.com/stackdriver/docs/managed-prometheus">GMP Team</a></span>
                </div>
-               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
                 <p>Built a containerized benchmarking framework on GKE to measure Prometheus performance across releases, identifying critical bottlenecks before production deployment.</p>
@@ -172,7 +167,6 @@
                     <br>
                     <strong>Cloudera</strong> <span style="font-weight: normal; opacity: 0.7;">&nbsp;|&nbsp; Platform Security Team</span>
                </div>
-               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
                 <p>Built a comprehensive dashboard that portrayed the security status of various products owned by different engineering teams and also helped query relevant results to reduce the turnaround time to fix the security issues. The dashboard showed the scan results grouped by Releases, Projects, Components, and CVEs, and displayed threat counts based on products' release versions and minor versions along with a time-series analysis of issues.</p>
@@ -186,7 +180,6 @@
                     <br>
                     <strong>Reliance Industries Limited</strong> <span style="font-weight: normal; opacity: 0.7;">&nbsp;|&nbsp; Central Platform Data Analytics Team</span>
                </div>
-               <span class="arrow" style="background: transparent; float: right; font-weight: bold; font-size: 20px; margin-top:-25px; transition: 0.2s ease-in;">&#10141;</span>
               </button>
                 <div class="content">
                 <p>Developed a query builder using Python (NLP) / Django / MySQL which boosted the efficiency of the Hive query generation process (in the ETL schedule) by ~60%. Successfully tested the generated query using the Spark architecture.</p>
@@ -376,34 +369,6 @@
 </footer>
 
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var arrow = this.children[1];
-        if (this.classList.contains("active")) 
-        {
-            arrow.style.rotate = "90deg";
-        } 
-        else 
-        {
-          arrow.style.rotate = "0deg";
-        } 
-
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight)
-        {
-            content.style.maxHeight = null;
-        } 
-        else 
-        {
-            content.style.maxHeight = content.scrollHeight + "px";
-        } 
-    });
-    }
-
     // Skills Grid
     var skills = [
       ['Kubernetes', 'https://images.icon-icons.com/2699/PNG/512/kubernetes_logo_icon_168359.png'],
