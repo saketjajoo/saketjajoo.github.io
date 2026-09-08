@@ -78,19 +78,13 @@ a.no-highlight:hover {
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 15px;
 }
 @media (min-width: 500px) {
-.container {
-    padding: 40px;
-}
-}
-@media (max-width: 500px) {
     .container {
         padding: 40px;
-        max-width: 90%;
     }
-    }
+}
 .list-unstyled {
     list-style-type: none;
 }
@@ -263,6 +257,14 @@ section p:last-child {
     float: right;
     font-style: italic;
     font-size: 15px;
+    text-align: right;
+    white-space: nowrap;
+}
+.collapsible .dates {
+    font-weight: bold;
+}
+.content .dates {
+    font-weight: normal;
 }
 .content {
     padding: 0 10px;
@@ -270,7 +272,7 @@ section p:last-child {
     overflow: visible;
     transition: max-height 0.2s ease-out;
     margin: 7px 0;
-    text-align: justify;
+    text-align: left;
 }
 
 .content > p::before
@@ -463,4 +465,68 @@ table td
   .achievements__item-description {
     width: 80%
   }
+}
+
+/* Sub-role headers (inside company collapsible content) */
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 600px) {
+    .collapsible {
+        padding: 14px 10px;
+    }
+
+    .collapsible > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .collapsible > div > img {
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+
+    .dates {
+        float: none;
+        display: block;
+        margin-top: 4px;
+        text-align: left;
+        font-size: 14px;
+        opacity: 0.85;
+    }
+
+    .role-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .role-header .dates {
+        margin-left: 0 !important;
+        text-align: left !important;
+    }
+
+    .content {
+        padding: 0 4px;
+    }
+
+    .content p {
+        text-align: left;
+    }
+
+    #skills_grid {
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+        gap: 15px;
+    }
+
+    .header__nav > a {
+        margin-right: 12px;
+        font-size: 0.95rem;
+    }
 }
